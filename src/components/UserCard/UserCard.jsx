@@ -1,32 +1,29 @@
 import "./style.css";
 
-function UserCard1(props) {  //desestruturação 
+function UserCard(props) {
+
     const carregando = false;
 
     if (carregando) {
         return (
             <article className="user-card">
                 <p>Carregando...</p>
-
             </article>
-        )
+        );
     }
-
 
     return (
         <article className="user-card">
             <img src={props.avatar} alt="Foto de Perfil" width={300} />
-
-            <h2>Nome:{props.nome} </h2>
-            <p>Idade:{props.idade} </p>
-            <p>Ocupação:{props.ocup ? props.ocup : "Não definida"} </p>
-            <p>Salario:{props.idade * 1000}</p>
-
+            <p>Nome: {props.nome}</p>
+            <p>Idade: {props.idade} anos</p>
+            <p>Ocupação: {props.ocup ? props.ocup : "Não definida"}</p>
+            <p>Salário: {props.idade * 1000}</p>
         </article>
-
     );
-};
+}
 
-export default UserCard1;
+export default UserCard;
 
-// props -> propriedades 
+// props -> propriedades
+// se isso ? então isso : ou isso;

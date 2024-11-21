@@ -1,9 +1,9 @@
 function Footer() {
     return (
         <footer>
-            <p style={{textAlign: 'center', padding:'15px', marginTop:'20px'}}>Criado por Thiago Obara</p>
+            <p>Criado por <strong>Thiago Obara</strong>.</p>
         </footer>
     );
-};
+}
 
 export default Footer;

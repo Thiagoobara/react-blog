@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./style.css";
 import Titulo from "../Titulo/Titulo";
 
-function Post() {
-    const [curtidas, setCurtidas] = useState(0); 
-    const [usuario, setUsuario] = useState("");
-    const [carregando, setCarregando] = useState(true);
+function Post(props) {
 
-    useEffect(() => {
-        // Simulando carregamento com setTimeout
-        setTimeout(() => {
-            setCarregando(false); // Atualiza o estado para "carregamento concluído"
-        }, 1000);
-    }, []); // O array vazio [] garante que isso só execute uma vez, na montagem do componente
+    const [curtidas, setCurtidas] = useState(0); // [estado, funcao modificadora]
+    const [carregando, setCarregando] = useState(true);
+    const [descurtidas, setDescurtidas] = useState(0);
 
     function adicionarCurtida() {
         setCurtidas(curtidas + 1);
     }
+
+    setTimeout(() => {
+        setCarregando(false);
+    }, 3000);
 
     if (carregando) {
         return (
@@ -28,15 +26,22 @@ function Post() {
 
     return (
         <div className="post">
-            <Titulo>O dolar</Titulo>
+            <Titulo>{props.titulo}</Titulo>
+            <img src={props.imagem} alt="Publicação" width={400} />
+            <p>{props.conteudo}</p>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, quibusdam necessitatibus. 
-                Beatae, magni earum? Dolorem harum officia assumenda blanditiis saepe inventore, 
-                vero nemo nobis autem adipisci dolorum? Vel, tenetur illo!
+                <small>{props.autor}</small>
             </p>
             <button onClick={adicionarCurtida}>
                 Curtidas: {curtidas}
             </button>
+            <button onClick={() => {
+                setDescurtidas(descurtidas+1);
+            }}>
+                Descurtidas: {descurtidas}
+            </button>
+
+            {curtidas > 10 ? <p>Post Popular!</p> : null}
         </div>
     );
 }
