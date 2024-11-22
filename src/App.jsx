@@ -14,7 +14,6 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route path="/sac" element={<Sac />} />
         <Route path="*" element={<NotFound />}/>
-        <Route path="/notfound" element={<NotFound/>} />
         <Route path="/sobre" element= {<Sobre/>} />
 
 
