@@ -29,16 +29,24 @@ function Post(props) {
             <Titulo>{props.titulo}</Titulo>
             <img src={props.imagem} alt="Publicação" width={400} />
             <p>{props.conteudo}</p>
+
             <p>
                 <small>{props.autor}</small>
             </p>
+
             <button onClick={adicionarCurtida}>
                 Curtidas: {curtidas}
             </button>
+
             <button onClick={() => {
                 setDescurtidas(descurtidas+1);
             }}>
                 Descurtidas: {descurtidas}
+            </button>
+            <button onClick={()=>{
+                window.alert(props.conteudo);
+            }}>
+                Detalhes
             </button>
 
             {curtidas > 10 ? <p>Post Popular!</p> : null}

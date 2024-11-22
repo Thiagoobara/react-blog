@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Users from "./pages/Users/Users";
 import Sac from "./pages/Sac/Sac";
+import NotFound from "./pages/NotFound/NotFound";
+import Sobre from "./pages/Sobre/Sobre";
 
 
 function App() {
@@ -11,7 +13,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<Users />} />
         <Route path="/sac" element={<Sac />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={<NotFound />}/>
+        <Route path="/notfound" element={<NotFound/>} />
+        <Route path="/sobre" element= {<Sobre/>} />
+
+
       </Routes>
     </BrowserRouter>
   );
