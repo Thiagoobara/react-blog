@@ -5,6 +5,7 @@ import Sac from "./pages/Sac/Sac";
 import NotFound from "./pages/NotFound/NotFound";
 import Sobre from "./pages/Sobre/Sobre";
 import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Route path="/sac" element={<Sac/>}  />
         <Route path="/sobre" element={<Sobre/>} />
         <Route path="/login" element={<Login/>} />
-        
+        <Route path="/signup" element={<Signup/>} />
         <Route path="*" element={<NotFound/>} />
         
 
